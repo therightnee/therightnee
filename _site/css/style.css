@@ -1,0 +1,371 @@
+body {
+  font-family: 'Arvo', Georgia, serif;
+  padding: 0;
+  margin: 0;
+  background-image:url('/img/sprinkles.png');
+  min-height: 780px;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+}
+
+#top {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: absolute;
+  top: 5%;
+  height: 150px;
+  width: 950px;
+  font-size: 117px;
+  font-family: 'Lobster', cursive;
+  color: #ffffff;
+  filter: alpha(opacity=78);
+  opacity: 0.78;
+  background-color: #000000;
+  padding-left: 25px;
+}
+
+#name {
+  margin-top: -10px;
+  min-width: 504px;
+  color: #ffffff;
+}
+
+#links {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin-left: 25px;
+  height: 140px;
+  min-width: 400px;
+  width: 430px;
+}
+
+#linked {
+  height: 128px;
+  width: 128px;
+  display: inline-block;
+  background:transparent url('/img/linkedin_invert.png') center top no-repeat;
+}
+
+  #linked:hover {
+  border-bottom: solid 11px #1abc9c;
+}
+
+#github {
+  height: 128px;
+  width: 128px;
+  display: inline-block;
+  background:transparent url('/img/github_invert.png') center top no-repeat;
+}
+
+  #github:hover {
+    border-bottom: solid 11px #e74c3c;
+  }
+
+#email {
+  height: 128px;
+  width: 128px;
+  display: inline-block;
+  background:transparent url('/img/email_invert.png') center top no-repeat;
+}
+
+  #email:hover {
+    border-bottom: solid 11px #2980b9;
+  }
+
+
+#limited {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+@media all and (min-width: 1526px) {
+
+#menu {
+  text-align: center;
+  position: fixed;
+  right: 5%;
+  filter: alpha(opacity=78);
+  opacity: 0.78;
+  background-color: #000000;
+  width: 300px;
+  height: 100%;
+}
+
+#content{  
+  position: absolute;
+  left: 2%;
+  bottom: 0px;
+  height: 550px;
+}
+
+#summary {
+    max-width: 500px;
+    width: 45%;
+  }
+
+}
+
+/*Main Page Css*/
+
+#main {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+#description {
+  height: 500px;
+  width: 505px;
+  margin: 10px;
+  font-size: 24px;
+  line-height: 42px;
+}
+
+
+  #proj_title {
+    color: #ffffff;
+    font-size: 42px;
+    font-family: 'Lobster', cursive;
+  }
+
+.item {
+  border: 5px solid white;
+  width: 250px;
+  margin-top: 15px;
+}
+
+
+  #extend {
+    color: #ffffff;
+    font-size: 36px;
+    font-family: 'Lobster', cursive; 
+  }
+
+  #extend:hover {
+    color: #ffffff;
+    font-size: 36px;
+    font-family: 'Lobster', cursive; 
+    text-decoration: underline;
+  }
+
+
+/*Project Display code*/
+
+#projects {
+  max-width: 1100px;
+
+}
+
+#p_title {  
+  font-size: 42px;
+  font-family: 'Lobster', cursive; 
+}
+
+.full_list {
+  margin: 0px 10px 0px 0px;
+}
+
+
+
+/*The following is from Ivan Lazarevic's '4 Line Image gallery with JQery'*/
+  #gallery {
+    width: 555px;
+    display: inline-block;
+  }
+
+  #overall{
+   width: 500px;
+   height: 405px;
+   margin-left: 15px;
+  }
+
+  #largeImage {
+   border: 8px solid white;
+  }
+
+  #img_text {
+   display: inline-block;
+   background: #ffffff;
+   color: #000000;
+   width: 100%;
+   text-align: left;  
+   border: 8px solid white;
+   margin-top: -10px;
+  }
+
+  #thumbs { 
+   margin-top: 27.5px;
+  }
+
+  #thumbs img {
+   height: 90px;
+   width: 120px;
+   border: 5px solid white;
+   cursor: pointer;
+  }
+
+  #thumbs img {
+   margin-right: 5px;
+   max-width: 150px;
+  }
+
+#summary {
+    display: inline-block;
+    padding: 0px 30px;
+    height: 100%;
+    float: left;
+    color: #000000;    
+  }
+
+    #summary p {
+      font-size: 18px;
+      line-height: 32px;
+    }
+
+    #summary span {
+      font-size: 24px;
+      line-height: 200%;
+    }
+
+
+.s_title{
+  font-weight: bold;
+  font-size: 28px;
+}
+
+
+#return{
+  position: fixed;
+  right: 15px;
+  top: 100px;
+}
+
+@media all and (max-width: 1525px) {
+
+body {
+  min-width: 870px;
+  text-align: center;
+}
+
+
+#top {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  height: 117px;
+  font-size: 86px;
+  font-family: 'Lobster', cursive;
+  color: #ffffff;
+  filter: alpha(opacity=78);
+  opacity: 0.78;
+  background-color: #000000;
+}
+
+#content{  
+  margin: 0 auto;
+  height: 550px;
+  max-width: 90%;
+  margin-top: 150px;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+#menu {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  position: static;
+  display: inline-block;
+  width: 100%;
+  filter: alpha(opacity=78);
+  opacity: 0.78;
+  background-color: #000000;
+}
+
+.item {
+  margin: 5px 5px;
+}
+
+#description {
+  text-align: left;
+}
+
+#summary {
+  text-align: left;
+  width: 540px;
+}
+
+#gallery {
+  height: 550px;
+}
+
+}
+
+@media all and (max-width: 1300px) {
+
+#content {
+  min-height: 990px;
+  max-width: 100%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+#summary {
+  text-align: left;
+  width: 840px;
+}
+
+#gallery {
+  height: 1600px;
+}
+
+
+}

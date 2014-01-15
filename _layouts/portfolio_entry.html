@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<div id="summary">
+    {{ content }}
+</div>
+
+<!--This is inspired by Ivan Lazarevic's '4 Line Image gallery with JQery' -->
+<div id="gallery">
+    <div id="overall" >
+      <img id="largeImage" src='{{page.image1}}' />
+      <div id="img_text"> {{page.title1}} </div>
+    </div>
+    <div id="thumbs">
+        <img src='{{page.image1}}' title='{{page.title1}}'/>
+        <img src='{{page.image2}}' title='{{page.title2}}' /> 
+        <img src='{{page.image3}}' title='{{page.title3}}' /> 
+        <img src='{{page.image4}}' title='{{page.title4}}' /> 
+    </div>
+</div>
+<script>
+//This will change the large image
+  $('#thumbs').delegate('img','click', function(){
+    $('#largeImage').attr('src',$(this).attr('src'));
+    $('#img_text').html($(this).attr('title'));
+  });
+</script>

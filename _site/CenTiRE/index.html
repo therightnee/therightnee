@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <title>  CenTiRe |  James Nee </title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+  <script src="http://code.jquery.com/jquery-2.0.3.min.js" ></script>
+  <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+</head>
+<body>
+
+<div id="top">
+  <a href="/" id="name"> James Nee </a>
+  <div id="links">
+    <a href="http://www.linkedin.com/pub/james-nee/57/915/926" target="_blank" title="Visit my LinkedIn profile." id="linked"></a>
+    <a href="https://github.com/therightnee" target="_blank" id="github" title="Visit my GitHub page."></a>
+    <a href="mailto:james.nee@students.olin.edu" id="email" title="Send me an e-mail."></a>
+  </div>
+</div>
+
+<div id="content">
+    <div id="summary">
+    <p><strong class='s_title'>REU at Virginia Tech</strong></p>
+
+<p>Traveling to the southwest reaches of Virginia, I spent a memorable summer at Virginia Tech, working with Dr. Saied Taheri as part of the Center for Tire Research. During my ten weeks with the program, my research focused on designing a testing platform for semi-active suspensions. Given my passion for cars and land vehicles it was a wonderful experience. In my spare time I would read class material on topics like vehicle dynamics and tire mechanics. While there wasn’t enough time to build the rig, my partner, Jordan Ikeda, and I thoroughly reviewed the designs and gathered all the materials. In the Fall of 2013, the project continued as a senior design project, backed by General Motors. In addition, our research was selected by the Council for Undergraduate Research to be presented at their annual conference.</p>
+</div>
+
+<!--This is inspired by Ivan Lazarevic's '4 Line Image gallery with JQery' -->
+<div id="gallery">
+    <div id="overall" >
+      <img id="largeImage" src='/img/VT_REU/first.jpg' />
+      <div id="img_text"> The first iteration of the platform. </div>
+    </div>
+    <div id="thumbs">
+        <img src='/img/VT_REU/first.jpg' title='The first iteration of the platform.'/>
+        <img src='/img/VT_REU/final.jpg' title='Final design. Currently under construction.' /> 
+        <img src='/img/VT_REU/breakout.jpg' title='PCB Design.' /> 
+        <img src='/img/VT_REU/sensor.jpg' title='The completed board.' /> 
+    </div>
+</div>
+<script>
+//This will change the large image
+  $('#thumbs').delegate('img','click', function(){
+    $('#largeImage').attr('src',$(this).attr('src'));
+    $('#img_text').html($(this).attr('title'));
+  });
+</script>
+</div>
+
+<div id="menu">
+    <div id="proj_title"> Recent Projects </div>
+        <div id="limited">
+        
+            <a href="/JIMMY/" title="Designing JIMMY.">
+              <img class="item" src="/img/JIMMY/full_jimmy.jpg" />
+            </a>
+        
+            <a href="/CenTiRE/" title="Semi-Active Suspension Research">
+              <img class="item" src="/img/VT_REU/tire_section.jpg" />
+            </a>
+        
+            <a href="/JANG/" title="Marketing Custom Speakers">
+              <img class="item" src="/img/RE!/bothspeakers.jpg" />
+            </a>
+        
+        </div>
+
+        <div id="unlimited">
+        
+            <a href="/JIMMY/" title="Designing JIMMY.">
+              <img class="item" src="/img/JIMMY/full_jimmy.jpg" />
+            </a>
+        
+            <a href="/CenTiRE/" title="Semi-Active Suspension Research">
+              <img class="item" src="/img/VT_REU/tire_section.jpg" />
+            </a>
+        
+            <a href="/JANG/" title="Marketing Custom Speakers">
+              <img class="item" src="/img/RE!/bothspeakers.jpg" />
+            </a>
+        
+            <a href="/IMEC/" title="My summer building race cars.">
+              <img class="item" src="/img/IMEC/display.jpg" />
+            </a>
+        
+        </div>
+
+    <a href="/projects" id="extend"> See More </a>
+
+ <!--   <a href="/portfolio" title="Semi-Active Suspension Research"><img class="item" src="/img/VT_REU/breakout.png"></a>
+    <a href="#" title="Marketing Custom Speakers"><img class="item" src="/img/RE!/bothspeakers.jpg"></a>
+    <a href="#" title="Constructing the world's first 3D printed race car"><img class="item" src="/img/IMEC/display.jpg"></a>
+-->
+</div>
+
+<div id="return">
+    <a href="#" title="return"><img src="/img/up_arrow.png"></a>
+</div>
+
+<script>
+
+//This is the return code
+$(window).scroll( function() {
+  if ($(document).scrollTop() >= 150){
+
+    $("#return").show();
+
+  }
+  else {
+    $("#return").hide();
+  };
+});
+
+
+if (window.innerWidth >= 1525) {
+    $("#unlimited").hide();
+    $("#limited").show();
+    $("#extend").show();
+};
+
+if (window.innerWidth <= 1525) {
+    $("#unlimited").show();
+    $("#limited").hide();
+    $("#extend").hide();
+    $("#proj_title").html("My Past Projects");
+};
+
+$(window).resize(function() {
+    if (window.innerWidth <= 1525){
+        $("#unlimited").show();
+        $("#limited").hide();
+        $("#extend").hide();
+        loc = window.location.href
+        split_loc = loc.split("/")
+        if (split_loc[3] == "projects") {
+            window.location.replace("/")
+        };
+        $("#proj_title").html("My Past Projects");
+    };
+    if (window.innerWidth > 1525){
+        $("#unlimited").hide();
+        $("#limited").show();
+        $("#extend").show();
+        $("#proj_title").html("Recent Projects");
+    };
+});
+
+$(document).ready(function() {
+    $("#return").hide();
+});
+
+
+</script>
+</body>
+</html>

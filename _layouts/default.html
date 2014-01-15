@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <title> {% if page.title %} {{ page.title }} | {% endif %} James Nee </title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+  <script src="http://code.jquery.com/jquery-2.0.3.min.js" ></script>
+  <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+</head>
+<body>
+
+<div id="top">
+  <a href="/" id="name"> James Nee </a>
+  <div id="links">
+    <a href="http://www.linkedin.com/pub/james-nee/57/915/926" target="_blank" title="Visit my LinkedIn profile." id="linked"></a>
+    <a href="https://github.com/therightnee" target="_blank" id="github" title="Visit my GitHub page."></a>
+    <a href="mailto:james.nee@students.olin.edu" id="email" title="Send me an e-mail."></a>
+  </div>
+</div>
+
+<div id="content">
+    {{ content }}
+</div>
+
+<div id="menu">
+    <div id="proj_title"> Recent Projects </div>
+        <div id="limited">
+        {% for post in site.posts limit:3 %}
+            <a href="{{ post.url }}" title="{{post.l_title}}">
+              <img class="item" src="{{ post.image }}" />
+            </a>
+        {% endfor %}
+        </div>
+
+        <div id="unlimited">
+        {% for post in site.posts %}
+            <a href="{{ post.url }}" title="{{post.l_title}}">
+              <img class="item" src="{{ post.image }}" />
+            </a>
+        {% endfor %}
+        </div>
+
+    <a href="/projects" id="extend"> See More </a>
+
+ <!--   <a href="/portfolio" title="Semi-Active Suspension Research"><img class="item" src="/img/VT_REU/breakout.png"></a>
+    <a href="#" title="Marketing Custom Speakers"><img class="item" src="/img/RE!/bothspeakers.jpg"></a>
+    <a href="#" title="Constructing the world's first 3D printed race car"><img class="item" src="/img/IMEC/display.jpg"></a>
+-->
+</div>
+
+<div id="return">
+    <a href="#" title="return"><img src="/img/up_arrow.png"></a>
+</div>
+
+<script>
+
+//This is the return code
+$(window).scroll( function() {
+  if ($(document).scrollTop() >= 150){
+
+    $("#return").show();
+
+  }
+  else {
+    $("#return").hide();
+  };
+});
+
+
+if (window.innerWidth >= 1525) {
+    $("#unlimited").hide();
+    $("#limited").show();
+    $("#extend").show();
+};
+
+if (window.innerWidth <= 1525) {
+    $("#unlimited").show();
+    $("#limited").hide();
+    $("#extend").hide();
+    $("#proj_title").html("My Past Projects");
+};
+
+$(window).resize(function() {
+    if (window.innerWidth <= 1525){
+        $("#unlimited").show();
+        $("#limited").hide();
+        $("#extend").hide();
+        loc = window.location.href
+        split_loc = loc.split("/")
+        if (split_loc[3] == "projects") {
+            window.location.replace("/")
+        };
+        $("#proj_title").html("My Past Projects");
+    };
+    if (window.innerWidth > 1525){
+        $("#unlimited").hide();
+        $("#limited").show();
+        $("#extend").show();
+        $("#proj_title").html("Recent Projects");
+    };
+});
+
+$(document).ready(function() {
+    $("#return").hide();
+});
+
+
+</script>
+</body>
+</html>
