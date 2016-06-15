@@ -165,9 +165,15 @@ a {
   font-size: 28px;
 }
 
+#p_title{
+  font-weight: bold;
+  font-size: 28px;  
+}
+
 #gallery {
   display:none; 
   width: 600px;
+  margin-bottom: 50px;
 }
 
 /*Main Page Css*/
@@ -293,10 +299,6 @@ body {
 #summary {
   text-align: left;
   width: 840px;
-}
-
-#gallery {
-  margin-bottom: 50px;
 }
 
 }
