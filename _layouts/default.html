@@ -5,8 +5,17 @@
   <title> {% if page.title %} {{ page.title }} | {% endif %} James Nee </title>
   <link rel="stylesheet" href="/css/style.css" />
   <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
   <script src="http://code.jquery.com/jquery-2.0.3.min.js" ></script>
+<!-- Unite Gallery Includes -->
+    <script type='text/javascript' src='/unitegallery/js/unitegallery.min.js'></script> 
+    
+    <link rel='stylesheet' href='/unitegallery/css/unite-gallery.css' type='text/css' /> 
+    <script type='text/javascript' src='/unitegallery/themes/default/ug-theme-default.js'></script> 
+    <link rel='stylesheet' href='/unitegallery/themes/default/ug-theme-default.css' type='text/css' /> 
+    <script type='text/javascript' src='/unitegallery/themes/tiles/ug-theme-tiles.js'></script>
+
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
 </head>
 <body>
@@ -16,7 +25,7 @@
   <div id="links">
     <a href="http://www.linkedin.com/pub/james-nee/57/915/926" target="_blank" title="Visit my LinkedIn profile." id="linked"></a>
     <a href="https://github.com/therightnee" target="_blank" id="github" title="Visit my GitHub page."></a>
-    <a href="mailto:james.nee@students.olin.edu" id="email" title="Send me an e-mail."></a>
+    <a href="mailto:james.nee@therightnee.com" id="email" title="Send me an e-mail."></a>
   </div>
 </div>
 
@@ -27,7 +36,7 @@
 <div id="menu">
     <div id="proj_title"> Recent Projects </div>
         <div id="limited">
-        {% for post in site.posts limit:3 %}
+        {% for post in site.posts limit: 3 %}
             <a href="{{ post.url }}" title="{{post.l_title}}">
               <img class="item" src="{{ post.image }}" />
             </a>
@@ -44,15 +53,12 @@
 
     <a href="/projects" id="extend"> See More </a>
 
- <!--   <a href="/portfolio" title="Semi-Active Suspension Research"><img class="item" src="/img/VT_REU/breakout.png"></a>
-    <a href="#" title="Marketing Custom Speakers"><img class="item" src="/img/RE!/bothspeakers.jpg"></a>
-    <a href="#" title="Constructing the world's first 3D printed race car"><img class="item" src="/img/IMEC/display.jpg"></a>
--->
 </div>
 
 <div id="return">
-    <a href="#" title="return"><img src="/img/up_arrow.png"></a>
+    <a href="#" title="return"><img src="/img/up_arrow_75.png"></a>
 </div>
+
 
 <script>
 

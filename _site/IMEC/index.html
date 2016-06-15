@@ -5,8 +5,17 @@
   <title>  IMEC in Belgium |  James Nee </title>
   <link rel="stylesheet" href="/css/style.css" />
   <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
   <script src="http://code.jquery.com/jquery-2.0.3.min.js" ></script>
+<!-- Unite Gallery Includes -->
+    <script type='text/javascript' src='/unitegallery/js/unitegallery.min.js'></script> 
+    
+    <link rel='stylesheet' href='/unitegallery/css/unite-gallery.css' type='text/css' /> 
+    <script type='text/javascript' src='/unitegallery/themes/default/ug-theme-default.js'></script> 
+    <link rel='stylesheet' href='/unitegallery/themes/default/ug-theme-default.css' type='text/css' /> 
+    <script type='text/javascript' src='/unitegallery/themes/tiles/ug-theme-tiles.js'></script>
+
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
 </head>
 <body>
@@ -16,36 +25,54 @@
   <div id="links">
     <a href="http://www.linkedin.com/pub/james-nee/57/915/926" target="_blank" title="Visit my LinkedIn profile." id="linked"></a>
     <a href="https://github.com/therightnee" target="_blank" id="github" title="Visit my GitHub page."></a>
-    <a href="mailto:james.nee@students.olin.edu" id="email" title="Send me an e-mail."></a>
+    <a href="mailto:james.nee@therightnee.com" id="email" title="Send me an e-mail."></a>
   </div>
 </div>
 
 <div id="content">
     <div id="summary">
-    <p><strong class='s_title'>Building a 3D printed race car</strong></p>
+    <p><strong class="s_title">Building a 3D printed race car</strong><br />
+After my freshman year of college, I was hired by IMEC, an international research company to work in Belgium for the summer. I had no idea what awaited me there, but it was fantastic. Given my experience with fabrication, I was sent to work with Formula Group T, working on their first entry in the European Formula Student competitions - Aerion. Not only did I sharpen my welding and manufacturing skills I got to work with cutting edge technologies like biodegradable composites to laser sintered titanium. My contributions included designing and fabricating a shipping container for the car to protect it en route to England and Germany, as well as advising in the manufacture and assembly of the vehicle.</p>
 
-<p>After my freshman year of college, I was hired by IMEC, an international research comapny to work in Belgium for the summer. I had no idea what awaited me there, but it was fantastic. Given my experience with fabrication, I was sent to work with Formula Group T, working on their frist entry in the European Formula Student comeptitions - Aerion. Not only did I sharpen my welding and manufacturing skills I got to work with cutting edge technologies like biodegradeable composites to laser sintered titanium. My contributions included designing and fabricating a shipping container for the car to protect it en route to England and Germany, as well as advising in the manufacture and assembly of the vehicle.</p>
+
 </div>
 
-<!--This is inspired by Ivan Lazarevic's '4 Line Image gallery with JQery' -->
 <div id="gallery">
-    <div id="overall" >
-      <img id="largeImage" src='/img/IMEC/printed_knuckle.jpg' />
-      <div id="img_text"> An example of one of the 3D printed, titanium knuckles. </div>
-    </div>
-    <div id="thumbs">
-        <img src='/img/IMEC/printed_knuckle.jpg' title='An example of one of the 3D printed, titanium knuckles.'/>
-        <img src='/img/IMEC/all_tech.jpg' title='An overview of some of the advanced technologies employed.' /> 
-        <img src='/img/IMEC/shipping_container.jpg' title='A shipping container for Aerion.' /> 
-        <img src='/img/IMEC/lift.jpg' title='The lid also doubles as a loading ramp for the car.' /> 
-    </div>
+
+    <img class="img_size" alt="An example of one of the 3D printed, titanium knuckles."
+       src="/img/IMEC/IMG_0189.JPG"
+       data-image="/img/IMEC/IMG_0189.JPG"
+       data-description="An example of one of the 3D printed, titanium knuckles.">
+    
+    <img class="img_size" alt="An overview of some of the advanced technologies employed."
+       src="/img/IMEC/all_tech.jpg"
+       data-image="/img/IMEC/all_tech.jpg"
+       data-description="An overview of some of the advanced technologies employed.">
+
+    <img class="img_size" alt="A shipping container for Aerion."
+       src="/img/IMEC/IMG_0540.JPG"
+       data-image="/img/IMEC/IMG_0540.JPG"
+       data-description="A shipping container for Aerion.">
+       
+    <img class="img_size" alt="The lid also doubles as a loading ramp for the car."
+       src="/img/IMEC/IMG_0541.JPG"
+       data-image="/img/IMEC/IMG_0541.JPG"
+       data-description="The lid also doubles as a loading ramp for the car.">
+
 </div>
 <script>
-//This will change the large image
-  $('#thumbs').delegate('img','click', function(){
-    $('#largeImage').attr('src',$(this).attr('src'));
-    $('#img_text').html($(this).attr('title'));
+jQuery(document).ready(function(){ 
+  jQuery("#gallery").unitegallery({
+  gallery_theme:"tiles",
   });
+}); 
+
+//The following code prevents the ug-under-480 class to be added to the gallery id
+//the ug-under-480 class does not look good
+$( window ).resize(function() {
+  console.log(window.location.href);
+  window.location.href = window.location.href;
+});
 </script>
 </div>
 
@@ -53,28 +80,44 @@
     <div id="proj_title"> Recent Projects </div>
         <div id="limited">
         
-            <a href="/JIMMY/" title="Designing JIMMY.">
-              <img class="item" src="/img/JIMMY/full_jimmy.jpg" />
+            <a href="/REVO/" title="REVO">
+              <img class="item" src="/img/REVO/REVO_LOGO.png" />
             </a>
         
-            <a href="/CenTiRE/" title="Semi-Active Suspension Research">
-              <img class="item" src="/img/VT_REU/tire_section.jpg" />
+            <a href="/LOUD_BICYCLE/" title="Car Horn Testing Rig.">
+              <img class="item" src="/img/LOUD_BICYCLE/LOUD_BICYCLE_LOGO.png" />
             </a>
         
-            <a href="/JANG/" title="Marketing Custom Speakers">
-              <img class="item" src="/img/RE!/bothspeakers.jpg" />
+            <a href="/CBG/" title="Cigar Box Guitar">
+              <img class="item" src="/img/CBG/CBG_LOGO.png" />
             </a>
         
         </div>
 
         <div id="unlimited">
         
+            <a href="/REVO/" title="REVO">
+              <img class="item" src="/img/REVO/REVO_LOGO.png" />
+            </a>
+        
+            <a href="/LOUD_BICYCLE/" title="Car Horn Testing Rig.">
+              <img class="item" src="/img/LOUD_BICYCLE/LOUD_BICYCLE_LOGO.png" />
+            </a>
+        
+            <a href="/CBG/" title="Cigar Box Guitar">
+              <img class="item" src="/img/CBG/CBG_LOGO.png" />
+            </a>
+        
+            <a href="/POWERSLED/" title="POWER SLED">
+              <img class="item" src="/img/POWER_SLED/POWER_SLED_LOGO.png" />
+            </a>
+        
             <a href="/JIMMY/" title="Designing JIMMY.">
-              <img class="item" src="/img/JIMMY/full_jimmy.jpg" />
+              <img class="item" src="/img/JIMMY/JIMMY-B-0000-LOGO.png" />
             </a>
         
             <a href="/CenTiRE/" title="Semi-Active Suspension Research">
-              <img class="item" src="/img/VT_REU/tire_section.jpg" />
+              <img class="item" src="/img/VT_REU/VT_REU_LOGO.png" />
             </a>
         
             <a href="/JANG/" title="Marketing Custom Speakers">
@@ -89,15 +132,12 @@
 
     <a href="/projects" id="extend"> See More </a>
 
- <!--   <a href="/portfolio" title="Semi-Active Suspension Research"><img class="item" src="/img/VT_REU/breakout.png"></a>
-    <a href="#" title="Marketing Custom Speakers"><img class="item" src="/img/RE!/bothspeakers.jpg"></a>
-    <a href="#" title="Constructing the world's first 3D printed race car"><img class="item" src="/img/IMEC/display.jpg"></a>
--->
 </div>
 
 <div id="return">
-    <a href="#" title="return"><img src="/img/up_arrow.png"></a>
+    <a href="#" title="return"><img src="/img/up_arrow_75.png"></a>
 </div>
+
 
 <script>
 

@@ -5,8 +5,17 @@
   <title>  JIMMY-B |  James Nee </title>
   <link rel="stylesheet" href="/css/style.css" />
   <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
   <script src="http://code.jquery.com/jquery-2.0.3.min.js" ></script>
+<!-- Unite Gallery Includes -->
+    <script type='text/javascript' src='/unitegallery/js/unitegallery.min.js'></script> 
+    
+    <link rel='stylesheet' href='/unitegallery/css/unite-gallery.css' type='text/css' /> 
+    <script type='text/javascript' src='/unitegallery/themes/default/ug-theme-default.js'></script> 
+    <link rel='stylesheet' href='/unitegallery/themes/default/ug-theme-default.css' type='text/css' /> 
+    <script type='text/javascript' src='/unitegallery/themes/tiles/ug-theme-tiles.js'></script>
+
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
 </head>
 <body>
@@ -16,36 +25,54 @@
   <div id="links">
     <a href="http://www.linkedin.com/pub/james-nee/57/915/926" target="_blank" title="Visit my LinkedIn profile." id="linked"></a>
     <a href="https://github.com/therightnee" target="_blank" id="github" title="Visit my GitHub page."></a>
-    <a href="mailto:james.nee@students.olin.edu" id="email" title="Send me an e-mail."></a>
+    <a href="mailto:james.nee@therightnee.com" id="email" title="Send me an e-mail."></a>
   </div>
 </div>
 
 <div id="content">
     <div id="summary">
-    <p><strong class='s_title'>JIMMY - Your 3D Printed Friend</strong></p>
+    <p><strong class="s_title">JIMMY - Your 3D Printed Friend</strong><br />
+Intel approached our Mechanical Design class, ENGR3330, with an interesting proposition: design, and potentially build, a robot made from completely 3D printed parts. The intent of this project was to develop an affordable platform that would allow high school and college students the ability to use and interact bipedal robots in their studies and research, without requiring a massive budget. Intel provided the artistic inspiration, and our job was to design the linkages, drive mechanisms, and structures to make it happen. In addition, each team was assigned a target price point; for JIMMY-B this was roughly $1500 in parts, not counting material for the shell or electronics for controls. That meant we would lose a lot of articulation, and be limited to only two or three servo motors for actuation. The design was challenging - and at the mid-way point of development we needed to scrap everything and restart because we were not going to be able to make the robot function. Our team buckled down and worked like mad, finally developing a design we felt confident could be built and still met the price target. From this experience I gained a lot more experience in working with a large design team, getting creative with fasteners, and thinking through the user experience when assembling the robot.</p>
 
-<p>Intel approached our Mechanical Design class, ENGR3330, with an interesting proposition. Design, and potentially build, a robot made from completely 3D printed parts. The intent of this project was to develop an affordable platform that would allow high school and college students the ability to use and interact bipedal robots in their studies, without breaking the bank. Intel provided the artistic inspiration, and our job was to design the linkages, drive mechanisms, and structures to make it happen. From this experience I gained a lot more experience in working with a large design team, getting creative with fasteners, and thinking through the user experience when assembling the robot.</p>
+
 </div>
 
-<!--This is inspired by Ivan Lazarevic's '4 Line Image gallery with JQery' -->
 <div id="gallery">
-    <div id="overall" >
-      <img id="largeImage" src='/img/JIMMY/full_bod_drw.jpg' />
-      <div id="img_text"> Assembly drawing for the chest. </div>
-    </div>
-    <div id="thumbs">
-        <img src='/img/JIMMY/full_bod_drw.jpg' title='Assembly drawing for the chest.'/>
-        <img src='/img/JIMMY/print_check.jpg' title='Testing that his bigger parts fit in the printer.' /> 
-        <img src='/img/JIMMY/chest_assm.jpg' title='Getting creative with mounting.' /> 
-        <img src='/img/JIMMY/arm.jpg' title='An interesting arm drive.' /> 
-    </div>
+
+    <img class="img_size" alt="Fully assembled"
+       src="/img/JIMMY/Head_Overview.JPG"
+       data-image="/img/JIMMY/Head_Overview.JPG"
+       data-description="Fully assembled">
+    
+    <img class="img_size" alt="The wadling mechanism."
+       src="/img/JIMMY/Leg_Assembly_1.JPG"
+       data-image="/img/JIMMY/Leg_Assembly_1.JPG"
+       data-description="The wadling mechanism.">
+
+    <img class="img_size" alt="Ensuring all parts can fit in the printer."
+       src="/img/JIMMY/print_check.jpg"
+       data-image="/img/JIMMY/print_check.jpg"
+       data-description="Ensuring all parts can fit in the printer.">
+       
+    <img class="img_size" alt="An interesting arm drive."
+       src="/img/JIMMY/Top_Back.JPG"
+       data-image="/img/JIMMY/Top_Back.JPG"
+       data-description="An interesting arm drive.">
+
 </div>
 <script>
-//This will change the large image
-  $('#thumbs').delegate('img','click', function(){
-    $('#largeImage').attr('src',$(this).attr('src'));
-    $('#img_text').html($(this).attr('title'));
+jQuery(document).ready(function(){ 
+  jQuery("#gallery").unitegallery({
+  gallery_theme:"tiles",
   });
+}); 
+
+//The following code prevents the ug-under-480 class to be added to the gallery id
+//the ug-under-480 class does not look good
+$( window ).resize(function() {
+  console.log(window.location.href);
+  window.location.href = window.location.href;
+});
 </script>
 </div>
 
@@ -53,28 +80,44 @@
     <div id="proj_title"> Recent Projects </div>
         <div id="limited">
         
-            <a href="/JIMMY/" title="Designing JIMMY.">
-              <img class="item" src="/img/JIMMY/full_jimmy.jpg" />
+            <a href="/REVO/" title="REVO">
+              <img class="item" src="/img/REVO/REVO_LOGO.png" />
             </a>
         
-            <a href="/CenTiRE/" title="Semi-Active Suspension Research">
-              <img class="item" src="/img/VT_REU/tire_section.jpg" />
+            <a href="/LOUD_BICYCLE/" title="Car Horn Testing Rig.">
+              <img class="item" src="/img/LOUD_BICYCLE/LOUD_BICYCLE_LOGO.png" />
             </a>
         
-            <a href="/JANG/" title="Marketing Custom Speakers">
-              <img class="item" src="/img/RE!/bothspeakers.jpg" />
+            <a href="/CBG/" title="Cigar Box Guitar">
+              <img class="item" src="/img/CBG/CBG_LOGO.png" />
             </a>
         
         </div>
 
         <div id="unlimited">
         
+            <a href="/REVO/" title="REVO">
+              <img class="item" src="/img/REVO/REVO_LOGO.png" />
+            </a>
+        
+            <a href="/LOUD_BICYCLE/" title="Car Horn Testing Rig.">
+              <img class="item" src="/img/LOUD_BICYCLE/LOUD_BICYCLE_LOGO.png" />
+            </a>
+        
+            <a href="/CBG/" title="Cigar Box Guitar">
+              <img class="item" src="/img/CBG/CBG_LOGO.png" />
+            </a>
+        
+            <a href="/POWERSLED/" title="POWER SLED">
+              <img class="item" src="/img/POWER_SLED/POWER_SLED_LOGO.png" />
+            </a>
+        
             <a href="/JIMMY/" title="Designing JIMMY.">
-              <img class="item" src="/img/JIMMY/full_jimmy.jpg" />
+              <img class="item" src="/img/JIMMY/JIMMY-B-0000-LOGO.png" />
             </a>
         
             <a href="/CenTiRE/" title="Semi-Active Suspension Research">
-              <img class="item" src="/img/VT_REU/tire_section.jpg" />
+              <img class="item" src="/img/VT_REU/VT_REU_LOGO.png" />
             </a>
         
             <a href="/JANG/" title="Marketing Custom Speakers">
@@ -89,15 +132,12 @@
 
     <a href="/projects" id="extend"> See More </a>
 
- <!--   <a href="/portfolio" title="Semi-Active Suspension Research"><img class="item" src="/img/VT_REU/breakout.png"></a>
-    <a href="#" title="Marketing Custom Speakers"><img class="item" src="/img/RE!/bothspeakers.jpg"></a>
-    <a href="#" title="Constructing the world's first 3D printed race car"><img class="item" src="/img/IMEC/display.jpg"></a>
--->
 </div>
 
 <div id="return">
-    <a href="#" title="return"><img src="/img/up_arrow.png"></a>
+    <a href="#" title="return"><img src="/img/up_arrow_75.png"></a>
 </div>
+
 
 <script>
 

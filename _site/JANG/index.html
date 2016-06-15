@@ -5,8 +5,17 @@
   <title>  JANG Speakers |  James Nee </title>
   <link rel="stylesheet" href="/css/style.css" />
   <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
   <script src="http://code.jquery.com/jquery-2.0.3.min.js" ></script>
+<!-- Unite Gallery Includes -->
+    <script type='text/javascript' src='/unitegallery/js/unitegallery.min.js'></script> 
+    
+    <link rel='stylesheet' href='/unitegallery/css/unite-gallery.css' type='text/css' /> 
+    <script type='text/javascript' src='/unitegallery/themes/default/ug-theme-default.js'></script> 
+    <link rel='stylesheet' href='/unitegallery/themes/default/ug-theme-default.css' type='text/css' /> 
+    <script type='text/javascript' src='/unitegallery/themes/tiles/ug-theme-tiles.js'></script>
+
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
 </head>
 <body>
@@ -16,36 +25,56 @@
   <div id="links">
     <a href="http://www.linkedin.com/pub/james-nee/57/915/926" target="_blank" title="Visit my LinkedIn profile." id="linked"></a>
     <a href="https://github.com/therightnee" target="_blank" id="github" title="Visit my GitHub page."></a>
-    <a href="mailto:james.nee@students.olin.edu" id="email" title="Send me an e-mail."></a>
+    <a href="mailto:james.nee@therightnee.com" id="email" title="Send me an e-mail."></a>
   </div>
 </div>
 
 <div id="content">
     <div id="summary">
-    <p><strong class='s_title'>Custom Laser Cut Speakers</strong></p>
+    <p><strong class="s_title">Custom Laser Cut Speakers</strong><br />
+For an introductory entrepreneurship class, my team and I decided to build laser cut wood speakers, custom made to order. Our goal was to do highly technical, hands on work and bring a product to market before the semester ended. We only produced one finished set of speakers, but we learned a lot, and went through many iterations. 
+<br /><br />
+I was in charge of the electrical design and manufacture, and worked on the audio amplifier. Through this experience I learned to use Eagle, how to route a PCB, and how frustrating surface mount soldering can be. At the end of the semester, however, I learned how truly game changing economies of scale are, and the barriers of entry to the portable audio market are high. Not to mention dealing with lead times and syncing everything up for a product launch.</p>
 
-<p>For an introductory entreprenurship class, my team and I decided to build laser cut wood speakers, custom made to order. Our goal was to do highly technical, hands on work and bring a product to market before the semester ended. We only produced one finished set of speakers, but we learned a lot, and went through many iterations. <br /><br /> I was in charge of the electrical design and manufacture, and worked on the audio amplifier. Through this experience I learned to use Eagle, how to route a board, and how frustrating surface mount soldering can be. At the end of the semester, however, I learned how truly game changing economies of scale are, and the barriers of entry to the portable audio market are high.</p>
+
 </div>
 
-<!--This is inspired by Ivan Lazarevic's '4 Line Image gallery with JQery' -->
 <div id="gallery">
-    <div id="overall" >
-      <img id="largeImage" src='/img/RE!/3proto.jpg' />
-      <div id="img_text"> An early design of the speaker cabinet. </div>
-    </div>
-    <div id="thumbs">
-        <img src='/img/RE!/3proto.jpg' title='An early design of the speaker cabinet.'/>
-        <img src='/img/RE!/classAB.jpg' title='Initial amplifier circuit. 1.4 W Class AB Amplifiers.' /> 
-        <img src='/img/RE!/board.jpg' title='Routing for a SMT Class D Amplifier Board.' /> 
-        <img src='/img/RE!/classDAmp.jpg' title='A fully assembled board.' /> 
-    </div>
+
+    <img class="img_size" alt="An early design of the speaker cabinet."
+       src="/img/RE!/3proto.jpg"
+       data-image="/img/RE!/3proto.jpg"
+       data-description="An early design of the speaker cabinet.">
+    
+    <img class="img_size" alt="Initial amplifier circuit. 1.4 W Class AB Amplifiers."
+       src="/img/RE!/classAB.jpg"
+       data-image="/img/RE!/classAB.jpg"
+       data-description="Initial amplifier circuit. 1.4 W Class AB Amplifiers.">
+
+    <img class="img_size" alt="Designing a board for the Class D Amplifier."
+       src="/img/RE!/board.jpg"
+       data-image="/img/RE!/board.jpg"
+       data-description="Designing a board for the Class D Amplifier.">
+       
+    <img class="img_size" alt="A fully assembled board."
+       src="/img/RE!/classDAmp.jpg"
+       data-image="/img/RE!/classDAmp.jpg"
+       data-description="A fully assembled board.">
+
 </div>
 <script>
-//This will change the large image
-  $('#thumbs').delegate('img','click', function(){
-    $('#largeImage').attr('src',$(this).attr('src'));
-    $('#img_text').html($(this).attr('title'));
+jQuery(document).ready(function(){ 
+  jQuery("#gallery").unitegallery({
+  gallery_theme:"tiles",
   });
+}); 
+
+//The following code prevents the ug-under-480 class to be added to the gallery id
+//the ug-under-480 class does not look good
+$( window ).resize(function() {
+  console.log(window.location.href);
+  window.location.href = window.location.href;
+});
 </script>
 </div>
 
@@ -53,28 +82,44 @@
     <div id="proj_title"> Recent Projects </div>
         <div id="limited">
         
-            <a href="/JIMMY/" title="Designing JIMMY.">
-              <img class="item" src="/img/JIMMY/full_jimmy.jpg" />
+            <a href="/REVO/" title="REVO">
+              <img class="item" src="/img/REVO/REVO_LOGO.png" />
             </a>
         
-            <a href="/CenTiRE/" title="Semi-Active Suspension Research">
-              <img class="item" src="/img/VT_REU/tire_section.jpg" />
+            <a href="/LOUD_BICYCLE/" title="Car Horn Testing Rig.">
+              <img class="item" src="/img/LOUD_BICYCLE/LOUD_BICYCLE_LOGO.png" />
             </a>
         
-            <a href="/JANG/" title="Marketing Custom Speakers">
-              <img class="item" src="/img/RE!/bothspeakers.jpg" />
+            <a href="/CBG/" title="Cigar Box Guitar">
+              <img class="item" src="/img/CBG/CBG_LOGO.png" />
             </a>
         
         </div>
 
         <div id="unlimited">
         
+            <a href="/REVO/" title="REVO">
+              <img class="item" src="/img/REVO/REVO_LOGO.png" />
+            </a>
+        
+            <a href="/LOUD_BICYCLE/" title="Car Horn Testing Rig.">
+              <img class="item" src="/img/LOUD_BICYCLE/LOUD_BICYCLE_LOGO.png" />
+            </a>
+        
+            <a href="/CBG/" title="Cigar Box Guitar">
+              <img class="item" src="/img/CBG/CBG_LOGO.png" />
+            </a>
+        
+            <a href="/POWERSLED/" title="POWER SLED">
+              <img class="item" src="/img/POWER_SLED/POWER_SLED_LOGO.png" />
+            </a>
+        
             <a href="/JIMMY/" title="Designing JIMMY.">
-              <img class="item" src="/img/JIMMY/full_jimmy.jpg" />
+              <img class="item" src="/img/JIMMY/JIMMY-B-0000-LOGO.png" />
             </a>
         
             <a href="/CenTiRE/" title="Semi-Active Suspension Research">
-              <img class="item" src="/img/VT_REU/tire_section.jpg" />
+              <img class="item" src="/img/VT_REU/VT_REU_LOGO.png" />
             </a>
         
             <a href="/JANG/" title="Marketing Custom Speakers">
@@ -89,15 +134,12 @@
 
     <a href="/projects" id="extend"> See More </a>
 
- <!--   <a href="/portfolio" title="Semi-Active Suspension Research"><img class="item" src="/img/VT_REU/breakout.png"></a>
-    <a href="#" title="Marketing Custom Speakers"><img class="item" src="/img/RE!/bothspeakers.jpg"></a>
-    <a href="#" title="Constructing the world's first 3D printed race car"><img class="item" src="/img/IMEC/display.jpg"></a>
--->
 </div>
 
 <div id="return">
-    <a href="#" title="return"><img src="/img/up_arrow.png"></a>
+    <a href="#" title="return"><img src="/img/up_arrow_75.png"></a>
 </div>
+
 
 <script>
 

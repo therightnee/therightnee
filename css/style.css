@@ -97,6 +97,21 @@ a {
   align-items: center;
 }
 
+
+#portrait {
+  width: 500px;
+}
+
+.image_size {
+  min-width: 200px;
+}
+
+#return{
+  position: fixed;
+  right: 3px;
+  top: 10px;
+}
+
 @media all and (min-width: 1526px) {
 
 #menu {
@@ -110,18 +125,49 @@ a {
   height: 100%;
 }
 
-#content{  
+
+#content {
   position: absolute;
   left: 2%;
-  bottom: 0px;
-  height: 550px;
+  top: 250px;
+  max-width: 70%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
 }
 
 #summary {
-    max-width: 500px;
-    width: 45%;
-  }
+  width: 80%;
+}
 
+}
+
+/*Summary CSS - affects all pages*/ 
+
+    #summary p {
+      font-size: 18px;
+      line-height: 32px;
+    }
+
+    #summary span {
+      font-size: 24px;
+      line-height: 200%;
+    }
+
+
+.s_title{
+  font-weight: bold;
+  font-size: 28px;
+}
+
+#gallery {
+  display:none; 
+  width: 600px;
 }
 
 /*Main Page Css*/
@@ -149,7 +195,7 @@ a {
   #proj_title {
     color: #ffffff;
     font-size: 42px;
-    font-family: 'Lobster', cursive;
+    font-family: 'Lobster Two', cursive;
   }
 
 .item {
@@ -162,107 +208,17 @@ a {
   #extend {
     color: #ffffff;
     font-size: 36px;
-    font-family: 'Lobster', cursive; 
+    font-family: 'Lobster Two', cursive; 
   }
 
   #extend:hover {
     color: #ffffff;
     font-size: 36px;
-    font-family: 'Lobster', cursive; 
+    font-family: 'Lobster Two', cursive; 
     text-decoration: underline;
   }
 
 
-/*Project Display code*/
-
-#projects {
-  max-width: 1100px;
-
-}
-
-#p_title {  
-  font-size: 42px;
-  font-family: 'Lobster', cursive; 
-}
-
-.full_list {
-  margin: 0px 10px 0px 0px;
-}
-
-
-
-/*The following is from Ivan Lazarevic's '4 Line Image gallery with JQery'*/
-  #gallery {
-    width: 555px;
-    display: inline-block;
-  }
-
-  #overall{
-   width: 500px;
-   height: 405px;
-   margin-left: 15px;
-  }
-
-  #largeImage {
-   border: 8px solid white;
-  }
-
-  #img_text {
-   display: inline-block;
-   background: #ffffff;
-   color: #000000;
-   width: 100%;
-   text-align: left;  
-   border: 8px solid white;
-   margin-top: -10px;
-  }
-
-  #thumbs { 
-   margin-top: 27.5px;
-  }
-
-  #thumbs img {
-   height: 90px;
-   width: 120px;
-   border: 5px solid white;
-   cursor: pointer;
-  }
-
-  #thumbs img {
-   margin-right: 5px;
-   max-width: 150px;
-  }
-
-#summary {
-    display: inline-block;
-    padding: 0px 30px;
-    height: 100%;
-    float: left;
-    color: #000000;    
-  }
-
-    #summary p {
-      font-size: 18px;
-      line-height: 32px;
-    }
-
-    #summary span {
-      font-size: 24px;
-      line-height: 200%;
-    }
-
-
-.s_title{
-  font-weight: bold;
-  font-size: 28px;
-}
-
-
-#return{
-  position: fixed;
-  right: 15px;
-  top: 100px;
-}
 
 @media all and (max-width: 1525px) {
 
@@ -296,18 +252,18 @@ body {
 
 #content{  
   margin: 0 auto;
-  height: 550px;
-  max-width: 90%;
   margin-top: 150px;
+  margin-left: 10%;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: row;
   flex-direction: row;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  justify-content: center;
+  -webkit-align-items: left;
+  align-items: left;
+  -webkit-justify-content: left;
+  justify-content: left;
 }
+
 
 #menu {
   display: -webkit-flex;
@@ -336,11 +292,11 @@ body {
 
 #summary {
   text-align: left;
-  width: 540px;
+  width: 840px;
 }
 
 #gallery {
-  height: 550px;
+  margin-bottom: 50px;
 }
 
 }
@@ -348,8 +304,7 @@ body {
 @media all and (max-width: 1300px) {
 
 #content {
-  min-height: 990px;
-  max-width: 100%;
+  margin: 150px 0px 50px 0px;
   display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: column;
@@ -364,10 +319,5 @@ body {
   text-align: left;
   width: 840px;
 }
-
-#gallery {
-  height: 1600px;
-}
-
 
 }

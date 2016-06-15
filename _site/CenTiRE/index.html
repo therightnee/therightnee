@@ -5,8 +5,17 @@
   <title>  CenTiRe |  James Nee </title>
   <link rel="stylesheet" href="/css/style.css" />
   <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Lobster+Two' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Vollkorn' rel='stylesheet' type='text/css'>
   <script src="http://code.jquery.com/jquery-2.0.3.min.js" ></script>
+<!-- Unite Gallery Includes -->
+    <script type='text/javascript' src='/unitegallery/js/unitegallery.min.js'></script> 
+    
+    <link rel='stylesheet' href='/unitegallery/css/unite-gallery.css' type='text/css' /> 
+    <script type='text/javascript' src='/unitegallery/themes/default/ug-theme-default.js'></script> 
+    <link rel='stylesheet' href='/unitegallery/themes/default/ug-theme-default.css' type='text/css' /> 
+    <script type='text/javascript' src='/unitegallery/themes/tiles/ug-theme-tiles.js'></script>
+
   <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
 </head>
 <body>
@@ -16,36 +25,54 @@
   <div id="links">
     <a href="http://www.linkedin.com/pub/james-nee/57/915/926" target="_blank" title="Visit my LinkedIn profile." id="linked"></a>
     <a href="https://github.com/therightnee" target="_blank" id="github" title="Visit my GitHub page."></a>
-    <a href="mailto:james.nee@students.olin.edu" id="email" title="Send me an e-mail."></a>
+    <a href="mailto:james.nee@therightnee.com" id="email" title="Send me an e-mail."></a>
   </div>
 </div>
 
 <div id="content">
     <div id="summary">
-    <p><strong class='s_title'>REU at Virginia Tech</strong></p>
+    <p><strong class="s_title">REU at Virginia Tech</strong><br />
+Traveling to the southwest reaches of Virginia, I spent a memorable summer at Virginia Tech, working with Dr. Saied Taheri as part of the Center for Tire Research. During my ten weeks with the program, my research focused on designing a testing platform for semi-active suspensions. Given my passion for cars and land vehicles it was everything I had hoped for and more. At night, I would read material on topics like vehicle dynamics and tire mechanics. While there wasn’t enough time to build the rig, my partner, Jordan Ikeda, and I thoroughly reviewed the designs and gathered all the materials. In the Fall of 2013, the project continued as a senior design project, backed by General Motors. In addition, our research was selected by the Council for Undergraduate Research to be presented at their annual conference.</p>
 
-<p>Traveling to the southwest reaches of Virginia, I spent a memorable summer at Virginia Tech, working with Dr. Saied Taheri as part of the Center for Tire Research. During my ten weeks with the program, my research focused on designing a testing platform for semi-active suspensions. Given my passion for cars and land vehicles it was a wonderful experience. In my spare time I would read class material on topics like vehicle dynamics and tire mechanics. While there wasn’t enough time to build the rig, my partner, Jordan Ikeda, and I thoroughly reviewed the designs and gathered all the materials. In the Fall of 2013, the project continued as a senior design project, backed by General Motors. In addition, our research was selected by the Council for Undergraduate Research to be presented at their annual conference.</p>
+
 </div>
 
-<!--This is inspired by Ivan Lazarevic's '4 Line Image gallery with JQery' -->
 <div id="gallery">
-    <div id="overall" >
-      <img id="largeImage" src='/img/VT_REU/first.jpg' />
-      <div id="img_text"> The first iteration of the platform. </div>
-    </div>
-    <div id="thumbs">
-        <img src='/img/VT_REU/first.jpg' title='The first iteration of the platform.'/>
-        <img src='/img/VT_REU/final.jpg' title='Final design. Currently under construction.' /> 
-        <img src='/img/VT_REU/breakout.jpg' title='PCB Design.' /> 
-        <img src='/img/VT_REU/sensor.jpg' title='The completed board.' /> 
-    </div>
+
+    <img class="img_size" alt="The first iteration of the platform."
+       src="/img/VT_REU/Full_Rig_06042013.png"
+       data-image="/img/VT_REU/Full_Rig_06042013.png"
+       data-description="The first iteration of the platform.">
+    
+    <img class="img_size" alt="High level overview of the design."
+       src="/img/VT_REU/Testing_Rig_Picture.PNG"
+       data-image="/img/VT_REU/Testing_Rig_Picture.PNG"
+       data-description="High level overview of the design.">
+
+    <img class="img_size" alt="Final iteration."
+       src="/img/VT_REU/Test_Rig_07152013.png"
+       data-image="/img/VT_REU/Test_Rig_07152013.png"
+       data-description="Final iteration.">
+       
+    <img class="img_size" alt="Performing FEA on various elements."
+       src="/img/VT_REU/Capture.PNG"
+       data-image="/img/VT_REU/Capture.PNG"
+       data-description="Performing FEA on various elements.">
+
 </div>
 <script>
-//This will change the large image
-  $('#thumbs').delegate('img','click', function(){
-    $('#largeImage').attr('src',$(this).attr('src'));
-    $('#img_text').html($(this).attr('title'));
+jQuery(document).ready(function(){ 
+  jQuery("#gallery").unitegallery({
+  gallery_theme:"tiles",
   });
+}); 
+
+//The following code prevents the ug-under-480 class to be added to the gallery id
+//the ug-under-480 class does not look good
+$( window ).resize(function() {
+  console.log(window.location.href);
+  window.location.href = window.location.href;
+});
 </script>
 </div>
 
@@ -53,28 +80,44 @@
     <div id="proj_title"> Recent Projects </div>
         <div id="limited">
         
-            <a href="/JIMMY/" title="Designing JIMMY.">
-              <img class="item" src="/img/JIMMY/full_jimmy.jpg" />
+            <a href="/REVO/" title="REVO">
+              <img class="item" src="/img/REVO/REVO_LOGO.png" />
             </a>
         
-            <a href="/CenTiRE/" title="Semi-Active Suspension Research">
-              <img class="item" src="/img/VT_REU/tire_section.jpg" />
+            <a href="/LOUD_BICYCLE/" title="Car Horn Testing Rig.">
+              <img class="item" src="/img/LOUD_BICYCLE/LOUD_BICYCLE_LOGO.png" />
             </a>
         
-            <a href="/JANG/" title="Marketing Custom Speakers">
-              <img class="item" src="/img/RE!/bothspeakers.jpg" />
+            <a href="/CBG/" title="Cigar Box Guitar">
+              <img class="item" src="/img/CBG/CBG_LOGO.png" />
             </a>
         
         </div>
 
         <div id="unlimited">
         
+            <a href="/REVO/" title="REVO">
+              <img class="item" src="/img/REVO/REVO_LOGO.png" />
+            </a>
+        
+            <a href="/LOUD_BICYCLE/" title="Car Horn Testing Rig.">
+              <img class="item" src="/img/LOUD_BICYCLE/LOUD_BICYCLE_LOGO.png" />
+            </a>
+        
+            <a href="/CBG/" title="Cigar Box Guitar">
+              <img class="item" src="/img/CBG/CBG_LOGO.png" />
+            </a>
+        
+            <a href="/POWERSLED/" title="POWER SLED">
+              <img class="item" src="/img/POWER_SLED/POWER_SLED_LOGO.png" />
+            </a>
+        
             <a href="/JIMMY/" title="Designing JIMMY.">
-              <img class="item" src="/img/JIMMY/full_jimmy.jpg" />
+              <img class="item" src="/img/JIMMY/JIMMY-B-0000-LOGO.png" />
             </a>
         
             <a href="/CenTiRE/" title="Semi-Active Suspension Research">
-              <img class="item" src="/img/VT_REU/tire_section.jpg" />
+              <img class="item" src="/img/VT_REU/VT_REU_LOGO.png" />
             </a>
         
             <a href="/JANG/" title="Marketing Custom Speakers">
@@ -89,15 +132,12 @@
 
     <a href="/projects" id="extend"> See More </a>
 
- <!--   <a href="/portfolio" title="Semi-Active Suspension Research"><img class="item" src="/img/VT_REU/breakout.png"></a>
-    <a href="#" title="Marketing Custom Speakers"><img class="item" src="/img/RE!/bothspeakers.jpg"></a>
-    <a href="#" title="Constructing the world's first 3D printed race car"><img class="item" src="/img/IMEC/display.jpg"></a>
--->
 </div>
 
 <div id="return">
-    <a href="#" title="return"><img src="/img/up_arrow.png"></a>
+    <a href="#" title="return"><img src="/img/up_arrow_75.png"></a>
 </div>
+
 
 <script>
 
