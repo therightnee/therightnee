@@ -21083,7 +21083,6 @@ function UniteGalleryMain(){
 				
 		var addClass = "";
 		
-//sub-480 width removed because it does not work well with the site.
 
 		if(width <= 480){
 			addClass = "ug-under-480";			

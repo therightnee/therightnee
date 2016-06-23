@@ -100,6 +100,7 @@ a {
 
 #portrait {
   width: 500px;
+  margin-bottom: 35px;
 }
 
 .image_size {
@@ -171,7 +172,6 @@ a {
 }
 
 #gallery {
-  display:none; 
   width: 600px;
   margin-bottom: 50px;
 }
@@ -299,6 +299,11 @@ body {
 #summary {
   text-align: left;
   width: 840px;
+}
+
+#gallery {
+  margin-top: 50px;
+  margin-left: 50px;
 }
 
 }
