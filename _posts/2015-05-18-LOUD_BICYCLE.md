@@ -3,13 +3,13 @@ layout: portfolio_entry
 l_title: Car Horn Testing Rig.
 image:  /img/LOUD_BICYCLE/LOUD_BICYCLE_LOGO.png
 title:  Loud Bicycle Horn
-image1: /img/LOUD_BICYCLE/Full_Jig_Assm.JPG
+image1: /img/LOUD_BICYCLE/Full_Jig_Assm_SMALLER.jpg
 title1: CAD Model of final jig.
 image2: /img/LOUD_BICYCLE/ORIGINAL_ISO.jpg
 title2: First version of the testing rig.
 image3: /img/LOUD_BICYCLE/FRONT_FINAL.png
 title3: Final product front view.
-image4: /img/LOUD_BICYCLE/SIDE_FINAL.jpg
+image4: /img/LOUD_BICYCLE/SIDE_FINAL_SMALLER.jpg
 title4: Final product side view.
 ---
 <strong class="s_title">Quieting a Loud Bicycle.</strong><br />
